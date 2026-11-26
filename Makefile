@@ -5,7 +5,7 @@ ARFLAGS=rcs
 SRC=$(wildcard src/*.c)
 BUILD=$(patsubst src/%.c, build/%.o, $(SRC))
 
-app:build/libdemo.a build/main.o
+app:build/main.o build/libdemo.a
 	$(CC) $^ -o $@
 build/libdemo.a:build/log.o build/util.o
 	$(AR) $(ARFLAGS) $@ $^
